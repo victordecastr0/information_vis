@@ -40,7 +40,8 @@ def update_layout(fig):
           ),
           radialaxis=dict(
               tickfont=dict(
-                  size=20  # Aumenta o tamanho das labels das escalas radiais
+                  size=20,  # Aumenta o tamanho das labels das escalas radiais
+                  color='black'
               ),
               range=[40, 80],
               tickmode='linear',
