@@ -33,7 +33,8 @@ def update_layout(fig):
           ),
           angularaxis=dict(
               tickfont=dict(
-                  size=20  # Aumenta o tamanho das labels das categorias
+                  size=20,  # Aumenta o tamanho das labels das categorias
+                  color='black'
               ),
               tickangle=0  # Alinha as labels horizontalmente
           ),
