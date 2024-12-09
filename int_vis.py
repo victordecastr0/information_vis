@@ -249,8 +249,8 @@ def main():
 
   df = load_dataframe()
 
-
-  filter_df = df[df['NU_ANO'].isin(filtro_ano)]
+  df = df[df['NU_ANO'].isin(filtro_ano)]
+  filter_df = df[df['NU_ANO'].isin(filtro_ano)].copy()
   
   if filtro_sexo != 'Ambos':
     filter_df = df[df['TP_SEXO'] == filtro_sexo]
