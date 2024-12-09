@@ -224,7 +224,7 @@ def main():
     st.markdown('''Através dos gráficos e com a edição dos filtros é possível entender como o conjunto varia de acordo com:
 - Sexo (M ou F)
 - Ano (2017, 2020 ou 2023)
-- Tipo da escola (pública ou privada)
+- Tipo da escola (pública, privada ou estrangeira)
 ''')
   elif graf_option == 'Mapa de Calor':
     st.markdown('''Com o mapa de calor temos uma visualização completa da relação entre a nota da redação e a escolaridade dos pais,
@@ -245,7 +245,7 @@ def main():
   with f2:
     filtro_sexo = st.segmented_control('Sexo para análise', options=['M', 'F', 'Ambos'], default='Ambos')
   with f3:
-    filtro_escola = st.segmented_control('Tipo de escola para análsie', options=['Pública', 'Privada', 'Ambos'], default='Ambos')
+    filtro_escola = st.segmented_control('Tipo de escola para análsie', options=['Pública', 'Privada', 'Estrangeira', 'Geral'], default='Geral')
 
   df = load_dataframe()
 
@@ -255,13 +255,16 @@ def main():
   if filtro_sexo != 'Ambos':
     filter_df = df[df['TP_SEXO'] == filtro_sexo]
 
-  if filtro_escola != 'Ambos':
+  if filtro_escola != 'Geral':
     if filtro_escola == 'Privada':
       filter_df = filter_df[filter_df['TP_ESCOLA'] == 3]
       df = df[df['TP_ESCOLA'] == 3]
-    else:
+    elif filtro_escola == 'Pública':
       filter_df = filter_df[filter_df['TP_ESCOLA'] == 2]
       df = df[df['TP_ESCOLA'] == 2]
+    else:
+      filter_df = filter_df[filter_df['TP_ESCOLA'] == 4]
+      df = df[df['TP_ESCOLA'] == 4]
 
   if filtro_ano == []:
       st.warning('Selecione algum ano!')
