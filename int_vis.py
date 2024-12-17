@@ -235,7 +235,9 @@ def main():
 - Qual é a influência da escolaridade dos pais nas notas de redação dos participantes?''')
   elif graf_option == 'Gráfico de Radar':
     st.markdown('''Com o gráfico de radar temos uma representação esquemática do desempenho de toda as regiões do Brasil em relação às grandes áreas do enem,
-  assim consegumos identificiar pontos como:''')
+  assim consegumos identificiar pontos como:
+- Como o desempenho nas grandes áreas do Enem varia de acordo com a região do Brasil?
+- Como o desempenho geral varia de acordo com os filtros?''')
 
   st.divider()
 
